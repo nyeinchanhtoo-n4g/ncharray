@@ -28,7 +28,7 @@ let users = [
         "name": "Kurtis Weissnat",
     },
     {
-        "name": "Nicholas Runolfsdottir",
+        "name": "Nyein Chan Htoo",
     },
     {
         "name": "Glenna Reichert",
