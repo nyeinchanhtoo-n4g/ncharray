@@ -3,6 +3,7 @@ let doubleIncomeEL = document.getElementById('doubleIncomeBtn');
 let showMillionEL = document.getElementById('showMillionBtn');
 let sortRichesEL = document.getElementById('sortRichesBtn');
 let totalIncomeEL = document.getElementById('totalIncomeBtn');
+let searchEL = document.getElementById('searchInput');
 
 let users = [
     {
@@ -105,4 +106,15 @@ totalIncomeEL.addEventListener('click', () => {
             <div class="pr-3">${formatNumber(total)}</div>
     `;
     userincomeDataEL.appendChild(totalelement);
+});
+
+searchEL.addEventListener('input', (e) => {
+    let shUser = users;
+    if (e.target.value !== ''){
+        let search = e.target.value.toLowerCase();
+        shUser = shUser.filter(v => {
+        return v.name.toLocaleLowerCase().indexOf(search) > -1;
+    });
+    }
+    updateDom(shUser);
 });
